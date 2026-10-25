@@ -1,0 +1,347 @@
+{
+  "schema_version": 2,
+  "kind": "algorithm",
+  "algorithm": "bubble_sort",
+  "input": [
+    3,
+    1,
+    2
+  ],
+  "parameters": {
+    "order": "ascending"
+  },
+  "initial_state": {
+    "values": [
+      3,
+      1,
+      2
+    ],
+    "element_ids": [
+      0,
+      1,
+      2
+    ],
+    "sorted_indices": [],
+    "comparisons": 0,
+    "swaps": 0,
+    "focus": {
+      "range": null,
+      "pivot_id": null,
+      "pointers": {}
+    }
+  },
+  "steps": [
+    {
+      "type": "compare",
+      "payload": {
+        "indices": [
+          0,
+          1
+        ]
+      },
+      "description": "Сравниваем 3 и 1",
+      "line_id": "compare",
+      "state_after": {
+        "values": [
+          3,
+          1,
+          2
+        ],
+        "element_ids": [
+          0,
+          1,
+          2
+        ],
+        "sorted_indices": [],
+        "comparisons": 1,
+        "swaps": 0,
+        "focus": {
+          "range": null,
+          "pivot_id": null,
+          "pointers": {}
+        }
+      }
+    },
+    {
+      "type": "swap",
+      "payload": {
+        "indices": [
+          0,
+          1
+        ]
+      },
+      "description": "Меняем местами 3 и 1",
+      "line_id": "swap",
+      "state_after": {
+        "values": [
+          1,
+          3,
+          2
+        ],
+        "element_ids": [
+          1,
+          0,
+          2
+        ],
+        "sorted_indices": [],
+        "comparisons": 1,
+        "swaps": 1,
+        "focus": {
+          "range": null,
+          "pivot_id": null,
+          "pointers": {}
+        }
+      }
+    },
+    {
+      "type": "compare",
+      "payload": {
+        "indices": [
+          1,
+          2
+        ]
+      },
+      "description": "Сравниваем 3 и 2",
+      "line_id": "compare",
+      "state_after": {
+        "values": [
+          1,
+          3,
+          2
+        ],
+        "element_ids": [
+          1,
+          0,
+          2
+        ],
+        "sorted_indices": [],
+        "comparisons": 2,
+        "swaps": 1,
+        "focus": {
+          "range": null,
+          "pivot_id": null,
+          "pointers": {}
+        }
+      }
+    },
+    {
+      "type": "swap",
+      "payload": {
+        "indices": [
+          1,
+          2
+        ]
+      },
+      "description": "Меняем местами 3 и 2",
+      "line_id": "swap",
+      "state_after": {
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "element_ids": [
+          1,
+          2,
+          0
+        ],
+        "sorted_indices": [],
+        "comparisons": 2,
+        "swaps": 2,
+        "focus": {
+          "range": null,
+          "pivot_id": null,
+          "pointers": {}
+        }
+      }
+    },
+    {
+      "type": "mark_sorted",
+      "payload": {
+        "indices": [
+          2
+        ]
+      },
+      "description": "Эти элементы уже на своих местах",
+      "line_id": "pass_complete",
+      "state_after": {
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "element_ids": [
+          1,
+          2,
+          0
+        ],
+        "sorted_indices": [
+          2
+        ],
+        "comparisons": 2,
+        "swaps": 2,
+        "focus": {
+          "range": null,
+          "pivot_id": null,
+          "pointers": {}
+        }
+      }
+    },
+    {
+      "type": "compare",
+      "payload": {
+        "indices": [
+          0,
+          1
+        ]
+      },
+      "description": "Сравниваем 1 и 2",
+      "line_id": "compare",
+      "state_after": {
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "element_ids": [
+          1,
+          2,
+          0
+        ],
+        "sorted_indices": [
+          2
+        ],
+        "comparisons": 3,
+        "swaps": 2,
+        "focus": {
+          "range": null,
+          "pivot_id": null,
+          "pointers": {}
+        }
+      }
+    },
+    {
+      "type": "mark_sorted",
+      "payload": {
+        "indices": [
+          1
+        ]
+      },
+      "description": "Эти элементы уже на своих местах",
+      "line_id": "pass_complete",
+      "state_after": {
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "element_ids": [
+          1,
+          2,
+          0
+        ],
+        "sorted_indices": [
+          1,
+          2
+        ],
+        "comparisons": 3,
+        "swaps": 2,
+        "focus": {
+          "range": null,
+          "pivot_id": null,
+          "pointers": {}
+        }
+      }
+    },
+    {
+      "type": "mark_sorted",
+      "payload": {
+        "indices": [
+          0
+        ]
+      },
+      "description": "Эти элементы уже на своих местах",
+      "line_id": "pass_complete",
+      "state_after": {
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "element_ids": [
+          1,
+          2,
+          0
+        ],
+        "sorted_indices": [
+          0,
+          1,
+          2
+        ],
+        "comparisons": 3,
+        "swaps": 2,
+        "focus": {
+          "range": null,
+          "pivot_id": null,
+          "pointers": {}
+        }
+      }
+    },
+    {
+      "type": "done",
+      "payload": {
+        "indices": []
+      },
+      "description": "Готово! Массив отсортирован",
+      "line_id": "finished",
+      "state_after": {
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "element_ids": [
+          1,
+          2,
+          0
+        ],
+        "sorted_indices": [
+          0,
+          1,
+          2
+        ],
+        "comparisons": 3,
+        "swaps": 2,
+        "focus": {
+          "range": null,
+          "pivot_id": null,
+          "pointers": {}
+        }
+      }
+    }
+  ],
+  "result": {
+    "values": [
+      1,
+      2,
+      3
+    ],
+    "element_ids": [
+      1,
+      2,
+      0
+    ],
+    "sorted_indices": [
+      0,
+      1,
+      2
+    ],
+    "comparisons": 3,
+    "swaps": 2,
+    "focus": {
+      "range": null,
+      "pivot_id": null,
+      "pointers": {}
+    }
+  }
+}

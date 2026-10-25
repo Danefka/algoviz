@@ -1,0 +1,3493 @@
+{
+  "schema_version": 2,
+  "kind": "algorithm",
+  "algorithm": "merge_sort",
+  "input": [
+    7,
+    3,
+    5,
+    1
+  ],
+  "parameters": {
+    "order": "ascending"
+  },
+  "initial_state": {
+    "values": [
+      7,
+      3,
+      5,
+      1
+    ],
+    "element_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "arrays": {
+      "left": [],
+      "right": [],
+      "result": []
+    },
+    "pointers": {
+      "left": 0,
+      "right": 0
+    },
+    "range": [
+      0,
+      4
+    ],
+    "middle": null,
+    "depth": 0,
+    "phase": "initial",
+    "comparisons": 0,
+    "writes": 0,
+    "merges": 0,
+    "nodes": {
+      "0:4": {
+        "range": [
+          0,
+          4
+        ],
+        "depth": 0,
+        "parent": null,
+        "ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "status": "pending"
+      }
+    },
+    "active_node": "0:4",
+    "selected": {},
+    "selection_kind": "normal"
+  },
+  "steps": [
+    {
+      "type": "split",
+      "payload": {
+        "range": [
+          0,
+          4
+        ],
+        "middle": 2
+      },
+      "description": "Делим [7, 3, 5, 1] пополам",
+      "line_id": "split",
+      "state_after": {
+        "values": [
+          7,
+          3,
+          5,
+          1
+        ],
+        "element_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "arrays": {
+          "left": [
+            0,
+            1
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "result": []
+        },
+        "pointers": {
+          "left": 0,
+          "right": 0
+        },
+        "range": [
+          0,
+          4
+        ],
+        "middle": 2,
+        "depth": 0,
+        "phase": "split",
+        "comparisons": 0,
+        "writes": 0,
+        "merges": 0,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              0,
+              1
+            ],
+            "status": "pending"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              2,
+              3
+            ],
+            "status": "pending"
+          }
+        },
+        "active_node": "0:4",
+        "selected": {},
+        "selection_kind": "normal"
+      }
+    },
+    {
+      "type": "split",
+      "payload": {
+        "range": [
+          0,
+          2
+        ],
+        "middle": 1
+      },
+      "description": "Делим [7, 3] пополам",
+      "line_id": "split",
+      "state_after": {
+        "values": [
+          7,
+          3,
+          5,
+          1
+        ],
+        "element_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "arrays": {
+          "left": [
+            0
+          ],
+          "right": [
+            1
+          ],
+          "result": []
+        },
+        "pointers": {
+          "left": 0,
+          "right": 0
+        },
+        "range": [
+          0,
+          2
+        ],
+        "middle": 1,
+        "depth": 1,
+        "phase": "split",
+        "comparisons": 0,
+        "writes": 0,
+        "merges": 0,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              0,
+              1
+            ],
+            "status": "split"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              2,
+              3
+            ],
+            "status": "pending"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "ready"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "ready"
+          }
+        },
+        "active_node": "0:2",
+        "selected": {},
+        "selection_kind": "normal"
+      }
+    },
+    {
+      "type": "split",
+      "payload": {
+        "range": [
+          2,
+          4
+        ],
+        "middle": 3
+      },
+      "description": "Делим [5, 1] пополам",
+      "line_id": "split",
+      "state_after": {
+        "values": [
+          7,
+          3,
+          5,
+          1
+        ],
+        "element_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "arrays": {
+          "left": [
+            2
+          ],
+          "right": [
+            3
+          ],
+          "result": []
+        },
+        "pointers": {
+          "left": 0,
+          "right": 0
+        },
+        "range": [
+          2,
+          4
+        ],
+        "middle": 3,
+        "depth": 1,
+        "phase": "split",
+        "comparisons": 0,
+        "writes": 0,
+        "merges": 0,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              0,
+              1
+            ],
+            "status": "split"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "ready"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "ready"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "ready"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "ready"
+          }
+        },
+        "active_node": "2:4",
+        "selected": {},
+        "selection_kind": "normal"
+      }
+    },
+    {
+      "type": "merge_start",
+      "payload": {
+        "range": [
+          0,
+          2
+        ],
+        "middle": 1
+      },
+      "description": "Собираем [7] и [3]",
+      "line_id": "merge_start",
+      "state_after": {
+        "values": [
+          7,
+          3,
+          5,
+          1
+        ],
+        "element_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "arrays": {
+          "left": [
+            0
+          ],
+          "right": [
+            1
+          ],
+          "result": []
+        },
+        "pointers": {
+          "left": 0,
+          "right": 0
+        },
+        "range": [
+          0,
+          2
+        ],
+        "middle": 1,
+        "depth": 1,
+        "phase": "merge",
+        "comparisons": 0,
+        "writes": 0,
+        "merges": 0,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [],
+            "status": "merging"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "ready"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "ready"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "ready"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "ready"
+          }
+        },
+        "active_node": "0:2",
+        "selected": {},
+        "selection_kind": "normal"
+      }
+    },
+    {
+      "type": "merge_compare",
+      "payload": {
+        "left": 0,
+        "right": 0
+      },
+      "description": "Сравниваем 7 и 3",
+      "line_id": "merge_compare",
+      "state_after": {
+        "values": [
+          7,
+          3,
+          5,
+          1
+        ],
+        "element_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "arrays": {
+          "left": [
+            0
+          ],
+          "right": [
+            1
+          ],
+          "result": []
+        },
+        "pointers": {
+          "left": 0,
+          "right": 0
+        },
+        "range": [
+          0,
+          2
+        ],
+        "middle": 1,
+        "depth": 1,
+        "phase": "merge",
+        "comparisons": 1,
+        "writes": 0,
+        "merges": 0,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [],
+            "status": "merging"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "ready"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "ready"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "ready"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "ready"
+          }
+        },
+        "active_node": "0:2",
+        "selected": {
+          "0:1": [
+            0
+          ],
+          "1:2": [
+            0
+          ]
+        },
+        "selection_kind": "compare"
+      }
+    },
+    {
+      "type": "merge_copy",
+      "payload": {
+        "from": "right",
+        "source_index": 0,
+        "target_index": 0,
+        "element_id": 1
+      },
+      "description": "Поднимаем 3 в общий массив",
+      "line_id": "merge_copy",
+      "state_after": {
+        "values": [
+          7,
+          3,
+          5,
+          1
+        ],
+        "element_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "arrays": {
+          "left": [
+            0
+          ],
+          "right": [
+            1
+          ],
+          "result": [
+            1
+          ]
+        },
+        "pointers": {
+          "left": 0,
+          "right": 1
+        },
+        "range": [
+          0,
+          2
+        ],
+        "middle": 1,
+        "depth": 1,
+        "phase": "merge",
+        "comparisons": 1,
+        "writes": 1,
+        "merges": 0,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1
+            ],
+            "status": "merging"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "ready"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "ready"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "ready"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "ready"
+          }
+        },
+        "active_node": "0:2",
+        "selected": {
+          "1:2": [
+            0
+          ],
+          "0:2": [
+            0
+          ]
+        },
+        "selection_kind": "copy"
+      }
+    },
+    {
+      "type": "merge_copy",
+      "payload": {
+        "from": "left",
+        "source_index": 0,
+        "target_index": 1,
+        "element_id": 0
+      },
+      "description": "Поднимаем 7 в общий массив",
+      "line_id": "merge_copy",
+      "state_after": {
+        "values": [
+          7,
+          3,
+          5,
+          1
+        ],
+        "element_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "arrays": {
+          "left": [
+            0
+          ],
+          "right": [
+            1
+          ],
+          "result": [
+            1,
+            0
+          ]
+        },
+        "pointers": {
+          "left": 1,
+          "right": 1
+        },
+        "range": [
+          0,
+          2
+        ],
+        "middle": 1,
+        "depth": 1,
+        "phase": "merge",
+        "comparisons": 1,
+        "writes": 2,
+        "merges": 0,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "merging"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "ready"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "ready"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "ready"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "ready"
+          }
+        },
+        "active_node": "0:2",
+        "selected": {
+          "0:1": [
+            0
+          ],
+          "0:2": [
+            1
+          ]
+        },
+        "selection_kind": "copy"
+      }
+    },
+    {
+      "type": "merge_commit",
+      "payload": {
+        "range": [
+          0,
+          2
+        ]
+      },
+      "description": "Часть [3, 7] собрана",
+      "line_id": "merge_commit",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          5,
+          1
+        ],
+        "element_ids": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "arrays": {
+          "left": [
+            0
+          ],
+          "right": [
+            1
+          ],
+          "result": [
+            1,
+            0
+          ]
+        },
+        "pointers": {
+          "left": 1,
+          "right": 1
+        },
+        "range": [
+          0,
+          2
+        ],
+        "middle": 1,
+        "depth": 1,
+        "phase": "merged",
+        "comparisons": 1,
+        "writes": 2,
+        "merges": 1,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "ready"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "ready"
+          }
+        },
+        "active_node": "0:2",
+        "selected": {},
+        "selection_kind": "copy"
+      }
+    },
+    {
+      "type": "merge_start",
+      "payload": {
+        "range": [
+          2,
+          4
+        ],
+        "middle": 3
+      },
+      "description": "Собираем [5] и [1]",
+      "line_id": "merge_start",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          5,
+          1
+        ],
+        "element_ids": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "arrays": {
+          "left": [
+            2
+          ],
+          "right": [
+            3
+          ],
+          "result": []
+        },
+        "pointers": {
+          "left": 0,
+          "right": 0
+        },
+        "range": [
+          2,
+          4
+        ],
+        "middle": 3,
+        "depth": 1,
+        "phase": "merge",
+        "comparisons": 1,
+        "writes": 2,
+        "merges": 1,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [],
+            "status": "merging"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "ready"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "ready"
+          }
+        },
+        "active_node": "2:4",
+        "selected": {},
+        "selection_kind": "normal"
+      }
+    },
+    {
+      "type": "merge_compare",
+      "payload": {
+        "left": 0,
+        "right": 0
+      },
+      "description": "Сравниваем 5 и 1",
+      "line_id": "merge_compare",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          5,
+          1
+        ],
+        "element_ids": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "arrays": {
+          "left": [
+            2
+          ],
+          "right": [
+            3
+          ],
+          "result": []
+        },
+        "pointers": {
+          "left": 0,
+          "right": 0
+        },
+        "range": [
+          2,
+          4
+        ],
+        "middle": 3,
+        "depth": 1,
+        "phase": "merge",
+        "comparisons": 2,
+        "writes": 2,
+        "merges": 1,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [],
+            "status": "merging"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "ready"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "ready"
+          }
+        },
+        "active_node": "2:4",
+        "selected": {
+          "2:3": [
+            0
+          ],
+          "3:4": [
+            0
+          ]
+        },
+        "selection_kind": "compare"
+      }
+    },
+    {
+      "type": "merge_copy",
+      "payload": {
+        "from": "right",
+        "source_index": 0,
+        "target_index": 0,
+        "element_id": 3
+      },
+      "description": "Поднимаем 1 в общий массив",
+      "line_id": "merge_copy",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          5,
+          1
+        ],
+        "element_ids": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "arrays": {
+          "left": [
+            2
+          ],
+          "right": [
+            3
+          ],
+          "result": [
+            3
+          ]
+        },
+        "pointers": {
+          "left": 0,
+          "right": 1
+        },
+        "range": [
+          2,
+          4
+        ],
+        "middle": 3,
+        "depth": 1,
+        "phase": "merge",
+        "comparisons": 2,
+        "writes": 3,
+        "merges": 1,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3
+            ],
+            "status": "merging"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "ready"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "ready"
+          }
+        },
+        "active_node": "2:4",
+        "selected": {
+          "3:4": [
+            0
+          ],
+          "2:4": [
+            0
+          ]
+        },
+        "selection_kind": "copy"
+      }
+    },
+    {
+      "type": "merge_copy",
+      "payload": {
+        "from": "left",
+        "source_index": 0,
+        "target_index": 1,
+        "element_id": 2
+      },
+      "description": "Поднимаем 5 в общий массив",
+      "line_id": "merge_copy",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          5,
+          1
+        ],
+        "element_ids": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "arrays": {
+          "left": [
+            2
+          ],
+          "right": [
+            3
+          ],
+          "result": [
+            3,
+            2
+          ]
+        },
+        "pointers": {
+          "left": 1,
+          "right": 1
+        },
+        "range": [
+          2,
+          4
+        ],
+        "middle": 3,
+        "depth": 1,
+        "phase": "merge",
+        "comparisons": 2,
+        "writes": 4,
+        "merges": 1,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3,
+              2
+            ],
+            "status": "merging"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "ready"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "ready"
+          }
+        },
+        "active_node": "2:4",
+        "selected": {
+          "2:3": [
+            0
+          ],
+          "2:4": [
+            1
+          ]
+        },
+        "selection_kind": "copy"
+      }
+    },
+    {
+      "type": "merge_commit",
+      "payload": {
+        "range": [
+          2,
+          4
+        ]
+      },
+      "description": "Часть [1, 5] собрана",
+      "line_id": "merge_commit",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          1,
+          5
+        ],
+        "element_ids": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "arrays": {
+          "left": [
+            2
+          ],
+          "right": [
+            3
+          ],
+          "result": [
+            3,
+            2
+          ]
+        },
+        "pointers": {
+          "left": 1,
+          "right": 1
+        },
+        "range": [
+          2,
+          4
+        ],
+        "middle": 3,
+        "depth": 1,
+        "phase": "merged",
+        "comparisons": 2,
+        "writes": 4,
+        "merges": 2,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "split"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3,
+              2
+            ],
+            "status": "ready"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "collapsed"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "collapsed"
+          }
+        },
+        "active_node": "2:4",
+        "selected": {},
+        "selection_kind": "copy"
+      }
+    },
+    {
+      "type": "merge_start",
+      "payload": {
+        "range": [
+          0,
+          4
+        ],
+        "middle": 2
+      },
+      "description": "Собираем [3, 7] и [1, 5]",
+      "line_id": "merge_start",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          1,
+          5
+        ],
+        "element_ids": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "arrays": {
+          "left": [
+            1,
+            0
+          ],
+          "right": [
+            3,
+            2
+          ],
+          "result": []
+        },
+        "pointers": {
+          "left": 0,
+          "right": 0
+        },
+        "range": [
+          0,
+          4
+        ],
+        "middle": 2,
+        "depth": 0,
+        "phase": "merge",
+        "comparisons": 2,
+        "writes": 4,
+        "merges": 2,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [],
+            "status": "merging"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3,
+              2
+            ],
+            "status": "ready"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "collapsed"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "collapsed"
+          }
+        },
+        "active_node": "0:4",
+        "selected": {},
+        "selection_kind": "normal"
+      }
+    },
+    {
+      "type": "merge_compare",
+      "payload": {
+        "left": 0,
+        "right": 0
+      },
+      "description": "Сравниваем 3 и 1",
+      "line_id": "merge_compare",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          1,
+          5
+        ],
+        "element_ids": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "arrays": {
+          "left": [
+            1,
+            0
+          ],
+          "right": [
+            3,
+            2
+          ],
+          "result": []
+        },
+        "pointers": {
+          "left": 0,
+          "right": 0
+        },
+        "range": [
+          0,
+          4
+        ],
+        "middle": 2,
+        "depth": 0,
+        "phase": "merge",
+        "comparisons": 3,
+        "writes": 4,
+        "merges": 2,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [],
+            "status": "merging"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3,
+              2
+            ],
+            "status": "ready"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "collapsed"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "collapsed"
+          }
+        },
+        "active_node": "0:4",
+        "selected": {
+          "0:2": [
+            0
+          ],
+          "2:4": [
+            0
+          ]
+        },
+        "selection_kind": "compare"
+      }
+    },
+    {
+      "type": "merge_copy",
+      "payload": {
+        "from": "right",
+        "source_index": 0,
+        "target_index": 0,
+        "element_id": 3
+      },
+      "description": "Поднимаем 1 в общий массив",
+      "line_id": "merge_copy",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          1,
+          5
+        ],
+        "element_ids": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "arrays": {
+          "left": [
+            1,
+            0
+          ],
+          "right": [
+            3,
+            2
+          ],
+          "result": [
+            3
+          ]
+        },
+        "pointers": {
+          "left": 0,
+          "right": 1
+        },
+        "range": [
+          0,
+          4
+        ],
+        "middle": 2,
+        "depth": 0,
+        "phase": "merge",
+        "comparisons": 3,
+        "writes": 5,
+        "merges": 2,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              3
+            ],
+            "status": "merging"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3,
+              2
+            ],
+            "status": "ready"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "collapsed"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "collapsed"
+          }
+        },
+        "active_node": "0:4",
+        "selected": {
+          "2:4": [
+            0
+          ],
+          "0:4": [
+            0
+          ]
+        },
+        "selection_kind": "copy"
+      }
+    },
+    {
+      "type": "merge_compare",
+      "payload": {
+        "left": 0,
+        "right": 1
+      },
+      "description": "Сравниваем 3 и 5",
+      "line_id": "merge_compare",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          1,
+          5
+        ],
+        "element_ids": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "arrays": {
+          "left": [
+            1,
+            0
+          ],
+          "right": [
+            3,
+            2
+          ],
+          "result": [
+            3
+          ]
+        },
+        "pointers": {
+          "left": 0,
+          "right": 1
+        },
+        "range": [
+          0,
+          4
+        ],
+        "middle": 2,
+        "depth": 0,
+        "phase": "merge",
+        "comparisons": 4,
+        "writes": 5,
+        "merges": 2,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              3
+            ],
+            "status": "merging"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3,
+              2
+            ],
+            "status": "ready"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "collapsed"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "collapsed"
+          }
+        },
+        "active_node": "0:4",
+        "selected": {
+          "0:2": [
+            0
+          ],
+          "2:4": [
+            1
+          ]
+        },
+        "selection_kind": "compare"
+      }
+    },
+    {
+      "type": "merge_copy",
+      "payload": {
+        "from": "left",
+        "source_index": 0,
+        "target_index": 1,
+        "element_id": 1
+      },
+      "description": "Поднимаем 3 в общий массив",
+      "line_id": "merge_copy",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          1,
+          5
+        ],
+        "element_ids": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "arrays": {
+          "left": [
+            1,
+            0
+          ],
+          "right": [
+            3,
+            2
+          ],
+          "result": [
+            3,
+            1
+          ]
+        },
+        "pointers": {
+          "left": 1,
+          "right": 1
+        },
+        "range": [
+          0,
+          4
+        ],
+        "middle": 2,
+        "depth": 0,
+        "phase": "merge",
+        "comparisons": 4,
+        "writes": 6,
+        "merges": 2,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              3,
+              1
+            ],
+            "status": "merging"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3,
+              2
+            ],
+            "status": "ready"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "collapsed"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "collapsed"
+          }
+        },
+        "active_node": "0:4",
+        "selected": {
+          "0:2": [
+            0
+          ],
+          "0:4": [
+            1
+          ]
+        },
+        "selection_kind": "copy"
+      }
+    },
+    {
+      "type": "merge_compare",
+      "payload": {
+        "left": 1,
+        "right": 1
+      },
+      "description": "Сравниваем 7 и 5",
+      "line_id": "merge_compare",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          1,
+          5
+        ],
+        "element_ids": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "arrays": {
+          "left": [
+            1,
+            0
+          ],
+          "right": [
+            3,
+            2
+          ],
+          "result": [
+            3,
+            1
+          ]
+        },
+        "pointers": {
+          "left": 1,
+          "right": 1
+        },
+        "range": [
+          0,
+          4
+        ],
+        "middle": 2,
+        "depth": 0,
+        "phase": "merge",
+        "comparisons": 5,
+        "writes": 6,
+        "merges": 2,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              3,
+              1
+            ],
+            "status": "merging"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3,
+              2
+            ],
+            "status": "ready"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "collapsed"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "collapsed"
+          }
+        },
+        "active_node": "0:4",
+        "selected": {
+          "0:2": [
+            1
+          ],
+          "2:4": [
+            1
+          ]
+        },
+        "selection_kind": "compare"
+      }
+    },
+    {
+      "type": "merge_copy",
+      "payload": {
+        "from": "right",
+        "source_index": 1,
+        "target_index": 2,
+        "element_id": 2
+      },
+      "description": "Поднимаем 5 в общий массив",
+      "line_id": "merge_copy",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          1,
+          5
+        ],
+        "element_ids": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "arrays": {
+          "left": [
+            1,
+            0
+          ],
+          "right": [
+            3,
+            2
+          ],
+          "result": [
+            3,
+            1,
+            2
+          ]
+        },
+        "pointers": {
+          "left": 1,
+          "right": 2
+        },
+        "range": [
+          0,
+          4
+        ],
+        "middle": 2,
+        "depth": 0,
+        "phase": "merge",
+        "comparisons": 5,
+        "writes": 7,
+        "merges": 2,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              3,
+              1,
+              2
+            ],
+            "status": "merging"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3,
+              2
+            ],
+            "status": "ready"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "collapsed"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "collapsed"
+          }
+        },
+        "active_node": "0:4",
+        "selected": {
+          "2:4": [
+            1
+          ],
+          "0:4": [
+            2
+          ]
+        },
+        "selection_kind": "copy"
+      }
+    },
+    {
+      "type": "merge_copy",
+      "payload": {
+        "from": "left",
+        "source_index": 1,
+        "target_index": 3,
+        "element_id": 0
+      },
+      "description": "Поднимаем 7 в общий массив",
+      "line_id": "merge_copy",
+      "state_after": {
+        "values": [
+          3,
+          7,
+          1,
+          5
+        ],
+        "element_ids": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "arrays": {
+          "left": [
+            1,
+            0
+          ],
+          "right": [
+            3,
+            2
+          ],
+          "result": [
+            3,
+            1,
+            2,
+            0
+          ]
+        },
+        "pointers": {
+          "left": 2,
+          "right": 2
+        },
+        "range": [
+          0,
+          4
+        ],
+        "middle": 2,
+        "depth": 0,
+        "phase": "merge",
+        "comparisons": 5,
+        "writes": 8,
+        "merges": 2,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              3,
+              1,
+              2,
+              0
+            ],
+            "status": "merging"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "ready"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3,
+              2
+            ],
+            "status": "ready"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "collapsed"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "collapsed"
+          }
+        },
+        "active_node": "0:4",
+        "selected": {
+          "0:2": [
+            1
+          ],
+          "0:4": [
+            3
+          ]
+        },
+        "selection_kind": "copy"
+      }
+    },
+    {
+      "type": "merge_commit",
+      "payload": {
+        "range": [
+          0,
+          4
+        ]
+      },
+      "description": "Часть [1, 3, 5, 7] собрана",
+      "line_id": "merge_commit",
+      "state_after": {
+        "values": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "element_ids": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "arrays": {
+          "left": [
+            1,
+            0
+          ],
+          "right": [
+            3,
+            2
+          ],
+          "result": [
+            3,
+            1,
+            2,
+            0
+          ]
+        },
+        "pointers": {
+          "left": 2,
+          "right": 2
+        },
+        "range": [
+          0,
+          4
+        ],
+        "middle": 2,
+        "depth": 0,
+        "phase": "merged",
+        "comparisons": 5,
+        "writes": 8,
+        "merges": 3,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              3,
+              1,
+              2,
+              0
+            ],
+            "status": "ready"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "collapsed"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3,
+              2
+            ],
+            "status": "collapsed"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "collapsed"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "collapsed"
+          }
+        },
+        "active_node": "0:4",
+        "selected": {},
+        "selection_kind": "copy"
+      }
+    },
+    {
+      "type": "done",
+      "payload": {},
+      "description": "Готово! Массив отсортирован",
+      "line_id": "done",
+      "state_after": {
+        "values": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "element_ids": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "arrays": {
+          "left": [],
+          "right": [],
+          "result": []
+        },
+        "pointers": {
+          "left": 0,
+          "right": 0
+        },
+        "range": [
+          0,
+          4
+        ],
+        "middle": null,
+        "depth": 0,
+        "phase": "done",
+        "comparisons": 5,
+        "writes": 8,
+        "merges": 3,
+        "nodes": {
+          "0:4": {
+            "range": [
+              0,
+              4
+            ],
+            "depth": 0,
+            "parent": null,
+            "ids": [
+              3,
+              1,
+              2,
+              0
+            ],
+            "status": "ready"
+          },
+          "0:2": {
+            "range": [
+              0,
+              2
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              1,
+              0
+            ],
+            "status": "collapsed"
+          },
+          "2:4": {
+            "range": [
+              2,
+              4
+            ],
+            "depth": 1,
+            "parent": "0:4",
+            "ids": [
+              3,
+              2
+            ],
+            "status": "collapsed"
+          },
+          "0:1": {
+            "range": [
+              0,
+              1
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              0
+            ],
+            "status": "collapsed"
+          },
+          "1:2": {
+            "range": [
+              1,
+              2
+            ],
+            "depth": 2,
+            "parent": "0:2",
+            "ids": [
+              1
+            ],
+            "status": "collapsed"
+          },
+          "2:3": {
+            "range": [
+              2,
+              3
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              2
+            ],
+            "status": "collapsed"
+          },
+          "3:4": {
+            "range": [
+              3,
+              4
+            ],
+            "depth": 2,
+            "parent": "2:4",
+            "ids": [
+              3
+            ],
+            "status": "collapsed"
+          }
+        },
+        "active_node": "0:4",
+        "selected": {},
+        "selection_kind": "copy"
+      }
+    }
+  ],
+  "result": {
+    "values": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "element_ids": [
+      3,
+      1,
+      2,
+      0
+    ],
+    "arrays": {
+      "left": [],
+      "right": [],
+      "result": []
+    },
+    "pointers": {
+      "left": 0,
+      "right": 0
+    },
+    "range": [
+      0,
+      4
+    ],
+    "middle": null,
+    "depth": 0,
+    "phase": "done",
+    "comparisons": 5,
+    "writes": 8,
+    "merges": 3,
+    "nodes": {
+      "0:4": {
+        "range": [
+          0,
+          4
+        ],
+        "depth": 0,
+        "parent": null,
+        "ids": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "status": "ready"
+      },
+      "0:2": {
+        "range": [
+          0,
+          2
+        ],
+        "depth": 1,
+        "parent": "0:4",
+        "ids": [
+          1,
+          0
+        ],
+        "status": "collapsed"
+      },
+      "2:4": {
+        "range": [
+          2,
+          4
+        ],
+        "depth": 1,
+        "parent": "0:4",
+        "ids": [
+          3,
+          2
+        ],
+        "status": "collapsed"
+      },
+      "0:1": {
+        "range": [
+          0,
+          1
+        ],
+        "depth": 2,
+        "parent": "0:2",
+        "ids": [
+          0
+        ],
+        "status": "collapsed"
+      },
+      "1:2": {
+        "range": [
+          1,
+          2
+        ],
+        "depth": 2,
+        "parent": "0:2",
+        "ids": [
+          1
+        ],
+        "status": "collapsed"
+      },
+      "2:3": {
+        "range": [
+          2,
+          3
+        ],
+        "depth": 2,
+        "parent": "2:4",
+        "ids": [
+          2
+        ],
+        "status": "collapsed"
+      },
+      "3:4": {
+        "range": [
+          3,
+          4
+        ],
+        "depth": 2,
+        "parent": "2:4",
+        "ids": [
+          3
+        ],
+        "status": "collapsed"
+      }
+    },
+    "active_node": "0:4",
+    "selected": {},
+    "selection_kind": "copy"
+  }
+}
